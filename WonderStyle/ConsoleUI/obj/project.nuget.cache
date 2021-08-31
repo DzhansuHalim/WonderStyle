@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "llo/LvuS9KECWUZeeF19PBq46qEO+Z7McpSAyz9Wf5/hnIe/U+8z64SGdjdxoizgEMWPLbUYLkMPh2ojAPcY0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dzhan\\OneDrive\\Documents\\GitHub\\WonderStyle\\WonderStyle\\ConsoleUI\\ConsoleUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dzhan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}

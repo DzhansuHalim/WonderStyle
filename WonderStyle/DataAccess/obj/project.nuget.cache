@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UOllAhJCRHo2AQVroRvLpcx3EXIzHXNhkvyyLDha1/PEsg3kVM+M4ya45F9dK1qZehylR+IDg8KwgG4XiQmDVQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dzhan\\OneDrive\\Documents\\GitHub\\WonderStyle\\WonderStyle\\DataAccess\\DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

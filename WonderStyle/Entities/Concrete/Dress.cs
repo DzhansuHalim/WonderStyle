@@ -14,7 +14,7 @@ namespace Entities.Concrete
         public int SizeId { get; set; }
 
         public string DressName { get; set; }
-        public short UnitsInStock { get; set; }
+        public int UnitsInStock { get; set; }
         public double UnitPrice { get; set; }
 
 

@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -65,5 +66,14 @@ namespace DataAccess.Concrete.InMemory
             return _dresses.Where(p => p.ColorId == colorId).ToList();
         }
 
+        public List<Dress> GetAll(Expression<Func<Dress, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Dress Get(Expression<Func<Dress, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

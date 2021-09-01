@@ -2,23 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DataAccess.Abstract.Repository;
+
 
 namespace DataAccess.Abstract
 {
-    public interface IDressDal
+    public interface IDressDal : IEntityRepository<Dress>
     {
-        //CRUD
-
-        void Create(Dress dress);
-        List<Dress> GetAll();
-        void Update(Dress dress);
-        void Delete(Dress dress);
-
-
-        List<Dress> GetByColor(int colorId);
-
-
-
 
     }
 }

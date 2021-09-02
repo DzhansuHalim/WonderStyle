@@ -22,7 +22,8 @@ namespace DataAccess.Concrete.EntityFramework.Context
         public DbSet<Length> Lengths { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Style> Styles { get; set; }
-        public DbSet<Sell> Sells { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Order> Orders { get; set; } 
 
 
 

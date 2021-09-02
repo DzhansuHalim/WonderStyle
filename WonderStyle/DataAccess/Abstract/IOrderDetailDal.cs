@@ -1,4 +1,4 @@
-﻿using DataAccess.Abstract.Repository;
+﻿using Core.DataAccess;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface ISellDal : IEntityRepository<Sell>
+    public interface IOrderDetailDal : IEntityRepository<OrderDetail>
     {
     }
 }

@@ -12,3 +12,5 @@ C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\obj\De
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\obj\Debug\netstandard2.0\Business.dll
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\obj\Debug\netstandard2.0\Business.pdb
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\bin\Debug\netstandard2.0\Core.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\Business\bin\Debug\netstandard2.0\Core.pdb

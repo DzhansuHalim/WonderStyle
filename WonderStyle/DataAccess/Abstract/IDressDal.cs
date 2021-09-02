@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DataAccess.Abstract.Repository;
-
+using Core.DataAccess;
+using Entities.DTOs;
 
 namespace DataAccess.Abstract
 {
     public interface IDressDal : IEntityRepository<Dress>
     {
+        List<DressDetailDto> GetDressDetails();
 
     }
 }

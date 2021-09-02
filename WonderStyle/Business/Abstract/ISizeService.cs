@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccess.Concrete.EntityFramework
+namespace Business.Abstract
 {
-    public class EfSallDal
+    public interface ISizeService
     {
     }
 }

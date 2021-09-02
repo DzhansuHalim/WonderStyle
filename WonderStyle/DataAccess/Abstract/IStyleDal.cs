@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DataAccess.Abstract.Repository;
+using Core.DataAccess;
 
 
 namespace DataAccess.Abstract

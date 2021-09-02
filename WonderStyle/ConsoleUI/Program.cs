@@ -9,15 +9,20 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            DressManager dressManager = new DressManager( new EfDressDal());
-
-            foreach (var dress in dressManager.GetAll())
-            {
-                Console.WriteLine(dress.DressName);
-            }
+            DressTest();
 
             Console.ReadLine();
 
+        }
+
+        private static void DressTest()
+        {
+            DressManager dressManager = new DressManager(new EfDressDal());
+
+            foreach (var dress in dressManager.GetDressDetail())
+            {
+                Console.WriteLine("Name: " + dress.DressName +"/ Size: "+ dress.SizeName + "/ Style: " + dress.StyleName + "/ Price: " + dress.UnitPrice);
+            }
         }
     }
 }

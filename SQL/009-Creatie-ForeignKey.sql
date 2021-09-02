@@ -24,11 +24,11 @@ ALTER TABLE Dresses
 	ADD CONSTRAINT fk_sizeid
 		FOREIGN KEY (SizeId) REFERENCES Sizes(SizeId)
 
-ALTER TABLE Sells
+ALTER TABLE Orders
 	ADD CONSTRAINT fk_customerid
 		FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId)
 
-ALTER TABLE Sells
+ALTER TABLE Order_Details
 	ADD CONSTRAINT fk_dressid
 		FOREIGN KEY (DressId) REFERENCES Dresses(DressId)
 

@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
+using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +21,12 @@ namespace Business.Concrete
         public DressManager(IDressDal dressDal)
         {
             _dressDal = dressDal;
+        }
+
+        public IResult Create(Dress dress)
+        {
+            _dressDal.Create(dress);
+            return new Result();
         }
 
         public List<Dress> GetAll()
@@ -48,6 +57,11 @@ namespace Business.Concrete
         public List<Dress> GetByUnitPrice(double min, double max)
         {
             return _dressDal.GetAll(p => p.UnitPrice <= min && p.UnitPrice <= max);
+        }
+
+        public List<DressDetailDto> GetDressDetail()
+        {
+            return _dressDal.GetDressDetails();
         }
     }
 }

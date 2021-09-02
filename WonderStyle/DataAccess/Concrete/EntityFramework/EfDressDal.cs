@@ -1,6 +1,8 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Context;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,53 +12,29 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfDressDal : IDressDal
+    public class EfDressDal : EfEntityRepositoryBase<Dress, WonderStyleContext>, IDressDal
     {
-        public void Create(Dress entity)
+        public List<DressDetailDto> GetDressDetails()
         {
-            using (WonderStyleContext context = new WonderStyleContext() )
+            using(WonderStyleContext context = new WonderStyleContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Dress entity)
-        {
-            using (WonderStyleContext context = new WonderStyleContext())
-            {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-        }
-
-        public Dress Get(Expression<Func<Dress, bool>> filter)
-        {
-            using (WonderStyleContext context = new WonderStyleContext())
-            {
-                return context.Set<Dress>().SingleOrDefault(filter);
-            }
-        }
-
-        public List<Dress> GetAll(Expression<Func<Dress, bool>> filter = null)
-        {
-            using (WonderStyleContext context = new WonderStyleContext())
-            {
-                return filter == null
-                    ? context.Set<Dress>().ToList()
-                    : context.Set<Dress>().Where(filter).ToList();
-            }
-        }
-
-        public void Update(Dress entity)
-        {
-            using (WonderStyleContext context = new WonderStyleContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
+                var result = from d in context.Dresses
+                             join c in context.Colors
+                             on d.ColorId equals c.ColorId
+                             join s in context.Sizes
+                             on d.SizeId equals s.SizeId
+                             join style in context.Styles
+                             on d.StyleId equals style.StyleId
+                             select new DressDetailDto
+                             {
+                                 DressId = d.DressId,
+                                 ColorName = c.ColorName,
+                                 DressName = d.DressName,
+                                 UnitPrice = d.UnitPrice,
+                                 StyleName = style.StyleName,
+                                 SizeName = s.SizeName
+                             };
+                return result.ToList();
             }
         }
     }

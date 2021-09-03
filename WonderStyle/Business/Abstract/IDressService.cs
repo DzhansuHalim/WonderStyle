@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -8,16 +9,16 @@ namespace Business.Abstract
 {
     public interface IDressService
     {
-        void Create(Dress dress);
+        IResult Create(Dress dress);
 
-        List<Dress> GetAll();
-        List<Dress> GetAllByColorId(int colorId);
-        List<Dress> GetAllByStyleId(int styleId);
-        List<Dress> GetAllBySizeId(int SizeId);
-        List<Dress> GetAllByLengthId(int LengthId);
-        List<Dress> GetByUnitPrice(double min, double max);
+        IDataResult<List<Dress>> GetAll();
+        IDataResult<List<Dress>> GetAllByColorId(int colorId);
+        IDataResult<List<Dress>> GetAllByStyleId(int styleId);
+        IDataResult<List<Dress>> GetAllBySizeId(int SizeId);
+        IDataResult<List<Dress>> GetAllByLengthId(int LengthId);
+        IDataResult<List<Dress>> GetByUnitPrice(double min, double max);
 
-        List<DressDetailDto> GetDressDetail();
+        IDataResult<List<DressDetailDto>> GetDressDetail();
 
     }
 }

@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using Core.Utilities.Results.Concrete;
+using Core.Utilities.Results.Concrete.DataRes;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -37,37 +38,47 @@ namespace Business.Concrete
 
         public IDataResult<List<Dress>> GetAll()
         {
-            return new DataResult<List<Dress>>(_dressDal.GetAll(),true,Messages.ListedDresses);
+            if(DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Dress>>(_dressDal.GetAll(), Messages.MaintenanceTime);
+
+            }
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(),Messages.ListedDresses);
         }
 
         public IDataResult<List<Dress>> GetAllByColorId(int colorId)
         {
-            return new DataResult<List<Dress>>(_dressDal.GetAll(p => p.ColorId == colorId));
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(p => p.ColorId == colorId));
         }
 
         public IDataResult<List<Dress>> GetAllByLengthId(int lengthId)
         {
-            return _dressDal.GetAll(p => p.LengthId == lengthId);
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(p => p.LengthId == lengthId));
         }
 
         public IDataResult<List<Dress>> GetAllBySizeId(int sizeId)
         {
-            return _dressDal.GetAll(p => p.SizeId == sizeId);
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(p => p.SizeId == sizeId));
         }
 
         public IDataResult<List<Dress>> GetAllByStyleId(int styleId)
         {
-            return _dressDal.GetAll(p => p.StyleId == styleId);
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(p => p.StyleId == styleId));
+        }
+
+        public IDataResult<Dress> GetByDressId(int id)
+        {
+            return new SuccessDataResult<Dress>(_dressDal.Get(p => p.DressId == id));
         }
 
         public IDataResult<List<Dress>> GetByUnitPrice(double min, double max)
         {
-            return _dressDal.GetAll(p => p.UnitPrice <= min && p.UnitPrice <= max);
+            return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(p => p.UnitPrice <= min && p.UnitPrice <= max));
         }
 
         public IDataResult<List<DressDetailDto>> GetDressDetail()
         {
-            return _dressDal.GetDressDetails();
+            return new SuccessDataResult<List<DressDetailDto>>( _dressDal.GetDressDetails());
         }
     }
 }

@@ -18,11 +18,21 @@ namespace ConsoleUI
         private static void DressTest()
         {
             DressManager dressManager = new DressManager(new EfDressDal());
+            var result = dressManager.GetDressDetail();
 
-            foreach (var dress in dressManager.GetDressDetail())
+            if(result.Success == true)
             {
-                Console.WriteLine("Name: " + dress.DressName +"/ Size: "+ dress.SizeName + "/ Style: " + dress.StyleName + "/ Price: " + dress.UnitPrice);
+                foreach (var dress in result.Data)
+                {
+                    Console.WriteLine("Name: " + dress.DressName + "/ Size: " + dress.SizeName + "/ Style: " + dress.StyleName + "/ Price: " + dress.UnitPrice);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+  
         }
     }
 }

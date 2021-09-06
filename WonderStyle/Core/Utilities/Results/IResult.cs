@@ -7,7 +7,7 @@ namespace Core.Utilities.Results
     //Base interface for the void methods
     public interface IResult
     {
-        bool Succes { get; }
+        bool Success { get; }
         string Message { get; }
     }
 }

@@ -6,7 +6,7 @@ namespace Core.Utilities.Results.Concrete
 {
     public class Result : IResult
     {
-        public bool Succes { get; }
+        public bool Success { get; }
 
         public string Message { get; }
 
@@ -17,7 +17,7 @@ namespace Core.Utilities.Results.Concrete
          
         public Result(bool success)
         {
-            Succes = success;
+            Success = success;
         }
 
 

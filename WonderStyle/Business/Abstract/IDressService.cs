@@ -12,6 +12,7 @@ namespace Business.Abstract
         IResult Create(Dress dress);
 
         IDataResult<List<Dress>> GetAll();
+        IDataResult <Dress> GetByDressId(int id); 
         IDataResult<List<Dress>> GetAllByColorId(int colorId);
         IDataResult<List<Dress>> GetAllByStyleId(int styleId);
         IDataResult<List<Dress>> GetAllBySizeId(int SizeId);

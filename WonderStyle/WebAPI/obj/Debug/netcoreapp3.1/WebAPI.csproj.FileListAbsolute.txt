@@ -66,3 +66,8 @@ C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\obj\Debu
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll

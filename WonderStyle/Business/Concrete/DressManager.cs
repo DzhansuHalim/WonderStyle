@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Results.Concrete.DataRes;
@@ -25,12 +27,9 @@ namespace Business.Concrete
             _dressDal = dressDal;
         }
 
+        [ValidationAspect(typeof(DressValidator))]
         public IResult Create(Dress dress)
         {
-            if(dress.DressName.Length < 2)
-            {
-                return new ErrorResult(Messages.DressNameInvalid);
-            }
 
             _dressDal.Create(dress);
             return new SuccessResult(Messages.DressAdded);    

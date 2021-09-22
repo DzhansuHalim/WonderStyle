@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Results.Concrete.DataRes;
@@ -27,12 +29,18 @@ namespace Business.Concrete
             _dressDal = dressDal;
         }
 
-        [ValidationAspect(typeof(DressValidator))]
+
+        [SecuredOperation("admin")]
+        //[ValidationAspect(typeof(DressValidator))]
         public IResult Create(Dress dress)
         {
-
-            _dressDal.Create(dress);
-            return new SuccessResult(Messages.DressAdded);    
+            IResult result = BusinessRules.Run(CheckIfDressNameExists(dress.DressName));
+            if (result != null )
+            {
+                _dressDal.Create(dress);
+                return new SuccessResult(Messages.DressAdded);
+            }
+            return new ErrorResult();
         }
 
         public IDataResult<List<Dress>> GetAll()
@@ -78,6 +86,16 @@ namespace Business.Concrete
         public IDataResult<List<DressDetailDto>> GetDressDetail()
         {
             return new SuccessDataResult<List<DressDetailDto>>( _dressDal.GetDressDetails());
+        }
+
+        private IResult CheckIfDressNameExists(string dressName)
+        {
+            var result = _dressDal.GetAll(d => d.DressName == dressName).Any();
+            if(result)
+            {
+                return new ErrorResult(Messages.DressNameAlreadyExists);
+            }
+            return new SuccessResult();
         }
     }
 }

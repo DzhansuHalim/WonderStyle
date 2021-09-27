@@ -71,3 +71,7 @@ C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debu
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\dzhan\OneDrive\Documents\GitHub\WonderStyle\WonderStyle\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll

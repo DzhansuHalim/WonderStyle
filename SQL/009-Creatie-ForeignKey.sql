@@ -32,3 +32,13 @@ ALTER TABLE Order_Details
 	ADD CONSTRAINT fk_dressid
 		FOREIGN KEY (DressId) REFERENCES Dresses(DressId)
 
+
+ALTER TABLE UserOperationClaims 
+	ADD CONSTRAINT fk_userRegisterId
+		FOREIGN KEY (UserId) REFERENCES Users(Id)
+
+
+
+ALTER TABLE UserOperationClaims 
+	ADD CONSTRAINT fk_operationClaimId
+		FOREIGN KEY (OperationClaimId) REFERENCES OperationClaims(Id)

@@ -48,7 +48,6 @@ namespace Business.Concrete
             if(DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Dress>>(_dressDal.GetAll(), Messages.MaintenanceTime);
-
             }
             return new SuccessDataResult<List<Dress>>(_dressDal.GetAll(),Messages.ListedDresses);
         }

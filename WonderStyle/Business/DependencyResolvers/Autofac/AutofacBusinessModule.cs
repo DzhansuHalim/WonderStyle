@@ -20,6 +20,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<DressManager>().As<IDressService>().SingleInstance();
             builder.RegisterType<EfDressDal>().As<IDressDal>().SingleInstance();
 
+            builder.RegisterType<StyleManager>().As<IStyleService>().SingleInstance();
+            builder.RegisterType<EfStyleDal>().As<IStyleDal>().SingleInstance();
+
             builder.RegisterType<UserRegisterManager>().As<IUserService>();
             builder.RegisterType<EfUserRegisterDal>().As<IUserRegisterDal>();
 
